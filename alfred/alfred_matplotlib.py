@@ -15,6 +15,7 @@ def download(url, path):
                 r.raw.decode_content = True
                 shutil.copyfileobj(r.raw, f)
 
+
 q = '{query}'
 q = 'axis'
 url = 'http://matplotlib.org/search.html?q=%s&check_keywords=yes&area=default' % q
@@ -22,7 +23,6 @@ url = 'http://matplotlib.org/search.html?q=%s&check_keywords=yes&area=default' %
 # soup = BeautifulSoup(r.content)
 # ref = soup.select('.search li')
 download('http://matplotlib.org/_static/logo2.png', '/Users/yeqing/tmp/matplotlib.png')
-
 
 import dryscrape
 
@@ -38,8 +38,10 @@ sess.set_attribute('auto_load_images', False)
 # sess.visit('/')
 # q = sess.at_xpath('//*[@name="q"]')
 for link in sess.xpath('//a[@href]'):
-  print link['href']
+    print link['href']
 exit()
+
+
 def get_docs():
     bu = 'http://scikit-learn.org/stable/modules/'
     icon = '/Users/yeqing/tmp/matplotlib.png'
